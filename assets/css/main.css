@@ -12,13 +12,11 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  /* default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Lato",  sans-serif; 
-  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
-  --default-font: "Marcellus",  sans-serif;
-  --heading-font: "Marcellus",  sans-serif;
-  --nav-font: "Marcellus",  sans-serif;
+  /* --default-font: "Inter", sans-serif; */
+  --default-font: "Barlow Semi Condensed", sans-serif;
+  --heading-font: "Barlow Semi Condensed", sans-serif;
+  --nav-font: "Barlow Semi Condensed", sans-serif;;
+
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -89,7 +87,7 @@ a:hover {
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 h1,
@@ -171,7 +169,7 @@ h6 {
   --surface-color: #1b2430;
   color: var(--default-color);
   background-color: transparent;
-  padding: 15px 0;
+  padding: 30px 0;
   transition: all 0.5s;
   z-index: 997;
   border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
@@ -186,7 +184,8 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
+  /* max-height: 36px; */
+  max-height: 50px;
   margin-right: 8px;
   transition: all 0.4s ease;
 }
@@ -207,7 +206,7 @@ h6 {
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
-  background: var(--accent2-color);
+  background: var(--accent-color);
   /* background: linear-gradient(90deg, var(--accent-color) 0%, #0284c7 100%); */
   padding: 10px 25px;
   margin: 0;
@@ -253,6 +252,7 @@ h6 {
 .header.scrolled {
   background-color: #ffffff !important;
   box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  padding: 10px 0; /* xxx */
 }
 /* Menu no topo (branco) */
 .header:not(.scrolled) .navmenu > ul > li > a {
@@ -275,6 +275,11 @@ h6 {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
+
+.navmenu a {
+  text-transform: uppercase;
+}
+
 /* Desktop Navigation */
 @media (min-width: 1200px) {
   .navmenu {
@@ -298,10 +303,10 @@ h6 {
     padding: 0;
   }
 
-  .navmenu a,
+  .navmenu a, .btn-getstarted,
   .navmenu a:focus {
     color: var(--nav-color);
-    font-size: 16px !important;
+    font-size: 17px !important;
     padding: 14px 18px;
     font-family: var(--nav-font);
     font-weight: 600 !important;
@@ -311,6 +316,7 @@ h6 {
     white-space: nowrap;
     transition: all 0.3s ease;
     position: relative;
+    text-transform: uppercase; 
   }
 
   .navmenu a i,
@@ -354,7 +360,6 @@ h6 {
     transform: rotate(180deg);
   }
   
-
   .navmenu .dropdown ul {
     margin: 0;
     padding: 20px;
@@ -1035,17 +1040,18 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  text-align: center;
-  padding-bottom: 60px;
+  /* text-align: center; */
   position: relative;
 }
 
 .section-title h2 {
-  font-size: 40px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
+  text-transform: uppercase;
+  color:var(--accent-color);
 }
 
 .section-title h2:after {
@@ -1058,15 +1064,17 @@ section,
   left: 0;
   right: 0;
   bottom: 0;
-  margin: auto;
+  /* margin: auto; */
 }
 
-.section-title p {
-  margin-bottom: 0;
-  font-size: 1.3rem;
+.section-title h3 {
+  margin-bottom: 40px;
+  font-size: 2.1rem;
   text-wrap: balance;
-  color:#999;
+  color:#444;
+  text-transform: uppercase;
 }
+
 
 /*--------------------------------------------------------------
 # Hero Section
@@ -1079,8 +1087,8 @@ section,
   display: flex;
   align-items: center;
   overflow: hidden;
-  top:-84px;
-  margin-bottom:-84px;
+  top:-115px;
+  margin-bottom:-113px;
 }
 
 /* Aqui faz um gradiente de cores ao fundo do Hero */
@@ -2240,458 +2248,524 @@ section,
   display: none !important;
 }
 
+
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-@media (max-width: 768px) {
-  .portfolio {
-    padding: 64px 0;
-  }
+.portfolio {
+  background:#fff;
 }
-
-.portfolio .filters-wrapper {
+.portfolio h2 {
+  color:#333;
+ /* font-weight:600 */
+}
+.portfolio p {
+	color:#333;
+	opacity:.8
+}
+.portfolio .portfolio-filters {
   display: flex;
   justify-content: center;
-  margin-bottom: 48px;
-}
-
-@media (max-width: 768px) {
-  .portfolio .filters-wrapper {
-    margin-bottom: 32px;
-  }
-}
-
-.portfolio .portfolio-filters {
-  display: inline-flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px;
-  margin: 0;
+  gap: 10px;
+  margin-bottom: 50px;
+  padding: 0;
   list-style: none;
-  background: var(--surface-color);
-  border-radius: 50px;
-  box-shadow: 0 4px 20px color-mix(in srgb, var(--default-color) 8%, transparent);
-}
-
-@media (max-width: 768px) {
-  .portfolio .portfolio-filters {
-    border-radius: 16px;
-    padding: 8px;
-    gap: 6px;
-  }
 }
 
 .portfolio .portfolio-filters li {
-  padding: 12px 24px;
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 50px;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 30px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  color: var(--default-color);
-  background: transparent;
-}
-
-@media (max-width: 768px) {
-  .portfolio .portfolio-filters li {
-    padding: 10px 16px;
-    font-size: 13px;
-  }
+  transition: all 0.3s ease;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
 }
 
 .portfolio .portfolio-filters li:hover {
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color) 10%, transparent);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
 }
 
 .portfolio .portfolio-filters li.filter-active {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   color: var(--contrast-color);
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent-color) 40%, transparent);
 }
 
-.portfolio .project-card {
-  background: var(--surface-color);
-  border-radius: 16px;
+.portfolio .portfolio-card {
+/*  background-color: var(--accent-color); */
+  background: linear-gradient(to top right, #0b4f73, #1387c1);
+  border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 10px 40px color-mix(in srgb, var(--default-color) 8%, transparent);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.portfolio .project-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px color-mix(in srgb, var(--default-color) 12%, transparent);
-}
-
-.portfolio .project-card:hover .image-wrapper img {
-  transform: scale(1.08);
-}
-
-.portfolio .project-card:hover .image-wrapper .hover-overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
-.portfolio .project-card.featured .image-wrapper::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color) 20%, transparent), transparent);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.portfolio .project-card .image-wrapper {
-  position: relative;
-  height: 220px;
-  overflow: hidden;
-}
-
-@media (max-width: 576px) {
-  .portfolio .project-card .image-wrapper {
-    height: 200px;
-  }
-}
-
-.portfolio .project-card .image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.portfolio .project-card .image-wrapper .hover-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--default-color) 80%, transparent) 100%);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 24px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.portfolio .project-card .image-wrapper .hover-overlay .overlay-actions {
-  display: flex;
-  gap: 12px;
-}
-
-.portfolio .project-card .image-wrapper .hover-overlay .action-btn {
-  width: 48px;
-  height: 48px;
-  background: var(--surface-color);
-  color: var(--accent-color);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+  margin-bottom: 30px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-.portfolio .project-card .image-wrapper .hover-overlay .action-btn:hover {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+.portfolio .portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio .portfolio-card:hover .portfolio-img .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio .portfolio-card:hover .portfolio-img img {
   transform: scale(1.1);
 }
 
-.portfolio .project-card .image-wrapper .category-badge {
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  padding: 8px 16px;
-  background: var(--surface-color);
-  color: var(--accent-color);
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 50px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 2;
+.portfolio .portfolio-card .portfolio-img {
+  position: relative;
+  overflow: hidden;
 }
 
-.portfolio .project-card .image-wrapper .featured-badge {
+.portfolio .portfolio-card .portfolio-img img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.portfolio .portfolio-card .portfolio-img .portfolio-overlay {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  padding: 8px 14px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color) 70%, #ff6b6b));
-  color: var(--contrast-color);
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  border-radius: 50px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   align-items: center;
-  gap: 6px;
-  box-shadow: 0 4px 16px color-mix(in srgb, var(--accent-color) 50%, transparent);
-  z-index: 2;
+  justify-content: center;
+  gap: 15px;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
 
-.portfolio .project-card .image-wrapper .featured-badge i {
-  font-size: 10px;
+.portfolio .portfolio-card .portfolio-img .portfolio-overlay i {
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
 }
 
-.portfolio .project-card .project-info {
-  padding: 24px;
-  flex-grow: 1;
+.portfolio .portfolio-card .portfolio-img .portfolio-overlay i:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #fff 20%);
+  transform: translateY(-5px);
+}
+
+.portfolio .portfolio-card .portfolio-info {
+  padding: 20px;
+}
+
+.portfolio .portfolio-card .portfolio-info h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--heading-color);
+}
+
+.portfolio .portfolio-card .portfolio-info p {
+  font-size: 0.9rem;
+  color: var(--default-color);
+  margin-bottom: 10px;
+}
+
+.portfolio .portfolio-card .portfolio-info .portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolio .portfolio-card .portfolio-info .portfolio-tags span {
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+}
+
+.portfolio .portfolio-card .portfolio-img .portfolio-overlay {
+  flex-direction: column; /* Ícone em cima, texto em baixo */
+}
+
+.portfolio .portfolio-card .portfolio-img .portfolio-overlay .overlay-text {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-top: 0px;
+  text-align: center;
+}
+
+.portfolio .btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 12px 30px;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.portfolio .btn-primary:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  border-color: color-mix(in srgb, var(--accent-color), #000 10%);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*--------------------------------------------------------------
+# Portfolio Details Section
+--------------------------------------------------------------*/
+.portfolio-details {
+  --section-spacing: 2.5rem;
+}
+
+.portfolio-details .portfolio-details-media {
+  position: relative;
+}
+
+.portfolio-details .portfolio-details-media .main-image {
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider {
+  position: relative;
+}
+
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-wrapper {
+  height: auto !important;
+}
+
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-slide img {
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  width: 100%;
+}
+
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next,
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev {
+  background-color: var(--contrast-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next:after,
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev:after {
+  font-size: 16px;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next:hover,
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev:hover {
+  background-color: var(--accent-color);
+}
+
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-next:hover:after,
+.portfolio-details .portfolio-details-media .main-image .portfolio-details-slider .swiper-button-prev:hover:after {
+  color: var(--contrast-color);
+}
+
+.portfolio-details .portfolio-details-media .thumbnail-grid img {
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.portfolio-details .portfolio-details-media .thumbnail-grid img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-details .portfolio-details-media .tech-stack-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.portfolio-details .portfolio-details-media .tech-stack-badges span {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 20px;
+  background-color: color-mix(in srgb, var(--heading-color), transparent 85%);
+  color: var(--heading-color);
+  transition: all 0.3s ease;
+}
+
+.portfolio-details .portfolio-details-media .tech-stack-badges span:hover {
+  background-color: color-mix(in srgb, var(--heading-color), transparent 70%);
+  transform: translateY(-2px);
+}
+
+.portfolio-details .portfolio-details-content {
+  padding: 0 0 0 2rem;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-@media (max-width: 576px) {
-  .portfolio .project-card .project-info {
-    padding: 20px;
-  }
-}
-
-.portfolio .project-card .project-info h3 {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--heading-color);
-  margin-bottom: 8px;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
-}
-
-.portfolio .project-card .project-info p {
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color) 70%, transparent);
-  line-height: 1.6;
-  margin-bottom: 16px;
-  flex-grow: 1;
-}
-
-.portfolio .project-card .project-info .project-meta {
+.portfolio-details .portfolio-details-content .project-meta {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 16px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent);
-}
-
-.portfolio .project-card .project-info .project-meta .tech-tags {
-  display: flex;
-  gap: 6px;
   flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
 }
 
-.portfolio .project-card .project-info .project-meta .tech-tags span {
-  font-size: 11px;
+.portfolio-details .portfolio-details-content .project-meta .badge-wrapper .project-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  border-radius: 30px;
   font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 50px;
-  background: color-mix(in srgb, var(--accent-color) 12%, transparent);
+  font-size: 14px;
+}
+
+.portfolio-details .portfolio-details-content .project-meta .date-client {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.portfolio-details .portfolio-details-content .project-meta .date-client .meta-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+.portfolio-details .portfolio-details-content .project-meta .date-client .meta-item i {
+  margin-right: 6px;
   color: var(--accent-color);
 }
 
-.portfolio .project-card .project-info .project-meta .year {
-  font-size: 13px;
+.portfolio-details .portfolio-details-content .project-title {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--heading-color);
+}
+
+.portfolio-details .portfolio-details-content .project-website {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-details .portfolio-details-content .project-website i {
+  font-size: 22px;
+  color: var(--accent-color);
+  margin-right: 8px;
+}
+
+.portfolio-details .portfolio-details-content .project-website a {
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.portfolio-details .portfolio-details-content .project-website a:hover {
+  letter-spacing: 0.5px;
+}
+
+.portfolio-details .portfolio-details-content .project-overview {
+  margin-bottom: var(--section-spacing);
+}
+
+.portfolio-details .portfolio-details-content .project-overview .lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+  margin-bottom: 1.5rem;
+}
+
+.portfolio-details .portfolio-details-content .project-overview .project-accordion .accordion-item {
+  border: none;
+  background: none;
+  margin-bottom: 10px;
+}
+
+.portfolio-details .portfolio-details-content .project-overview .project-accordion .accordion-item .accordion-header .accordion-button {
+  padding: 1rem;
   font-weight: 600;
-  color: color-mix(in srgb, var(--default-color) 50%, transparent);
+  font-size: 1rem;
+  color: var(--heading-color);
+  background-color: color-mix(in srgb, var(--surface-color), transparent 70%);
+  border-radius: 8px !important;
+  box-shadow: none;
 }
 
-.portfolio .cta-section {
-  margin-top: 80px;
-  padding: 64px;
-  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color) 70%, #6366f1));
-  border-radius: 24px;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
+.portfolio-details .portfolio-details-content .project-overview .project-accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) {
+  background-color: var(--surface-color);
+  color: var(--accent-color);
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
 }
 
-@media (max-width: 992px) {
-  .portfolio .cta-section {
-    padding: 48px 32px;
-    margin-top: 64px;
-  }
+.portfolio-details .portfolio-details-content .project-overview .project-accordion .accordion-item .accordion-header .accordion-button:not(.collapsed) i {
+  color: var(--accent-color);
 }
 
-@media (max-width: 576px) {
-  .portfolio .cta-section {
-    padding: 40px 24px;
-    border-radius: 16px;
-  }
+.portfolio-details .portfolio-details-content .project-overview .project-accordion .accordion-item .accordion-header .accordion-button::after {
+  background-size: 14px;
+  width: 14px;
+  height: 14px;
 }
 
-.portfolio .cta-section .cta-content {
-  position: relative;
-  z-index: 2;
+.portfolio-details .portfolio-details-content .project-overview .project-accordion .accordion-item .accordion-header .accordion-button i {
+  font-size: 1.1rem;
 }
 
-.portfolio .cta-section .cta-label {
-  display: inline-flex;
+.portfolio-details .portfolio-details-content .project-overview .project-accordion .accordion-item .accordion-body {
+  padding: 1rem;
+  background-color: var(--surface-color);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.portfolio-details .portfolio-details-content .project-overview .project-accordion .accordion-item .accordion-body p {
+  margin-bottom: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+  line-height: 1.6;
+}
+
+.portfolio-details .portfolio-details-content .project-features {
+  margin-bottom: var(--section-spacing);
+}
+
+.portfolio-details .portfolio-details-content .project-features h3 {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  margin-bottom: 1.2rem;
+}
+
+.portfolio-details .portfolio-details-content .project-features h3 i {
+  margin-right: 10px;
+  color: var(--accent-color);
+  font-size: 1.1em;
+}
+
+.portfolio-details .portfolio-details-content .project-features .feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.portfolio-details .portfolio-details-content .project-features .feature-list li {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 15px;
+  color: color-mix(in srgb, var(--default-color), transparent 15%);
+}
+
+.portfolio-details .portfolio-details-content .project-features .feature-list li i {
+  color: var(--accent-color);
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+
+.portfolio-details .portfolio-details-content .cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.portfolio-details .portfolio-details-content .cta-buttons .btn-view-project {
+  padding: 12px 28px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.portfolio-details .portfolio-details-content .cta-buttons .btn-view-project:hover {
+  background-color: color-mix(in srgb, var(--accent-color), black 15%);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-details .portfolio-details-content .cta-buttons .btn-next-project {
+  padding: 12px 28px;
+  background-color: color-mix(in srgb, var(--heading-color), transparent 90%);
+  color: var(--heading-color);
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
-  background: color-mix(in srgb, var(--contrast-color) 15%, transparent);
-  color: var(--contrast-color);
-  font-size: 13px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-radius: 50px;
-  margin-bottom: 24px;
 }
 
-.portfolio .cta-section .cta-label i {
-  font-size: 16px;
-}
-
-.portfolio .cta-section h3 {
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--contrast-color);
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-@media (max-width: 768px) {
-  .portfolio .cta-section h3 {
-    font-size: 28px;
-  }
-}
-
-.portfolio .cta-section p {
-  font-size: 18px;
-  color: color-mix(in srgb, var(--contrast-color) 85%, transparent);
-  max-width: 600px;
-  margin: 0 auto 32px;
-  line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-  .portfolio .cta-section p {
-    font-size: 16px;
-  }
-}
-
-.portfolio .cta-section .cta-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-@media (max-width: 576px) {
-  .portfolio .cta-section .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-.portfolio .cta-section .btn-cta-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 36px;
-  background: var(--surface-color);
-  color: var(--accent-color);
-  font-size: 15px;
-  font-weight: 700;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 576px) {
-  .portfolio .cta-section .btn-cta-primary {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
-.portfolio .cta-section .btn-cta-primary:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-}
-
-.portfolio .cta-section .btn-cta-primary:hover i {
-  transform: translateX(4px);
-}
-
-.portfolio .cta-section .btn-cta-primary i {
-  font-size: 18px;
+.portfolio-details .portfolio-details-content .cta-buttons .btn-next-project i {
   transition: transform 0.3s ease;
 }
 
-.portfolio .cta-section .btn-cta-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 16px 36px;
-  background: transparent;
-  color: var(--contrast-color);
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 50px;
-  border: 2px solid color-mix(in srgb, var(--contrast-color) 40%, transparent);
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.portfolio-details .portfolio-details-content .cta-buttons .btn-next-project:hover {
+  background-color: color-mix(in srgb, var(--heading-color), transparent 80%);
 }
 
-@media (max-width: 576px) {
-  .portfolio .cta-section .btn-cta-secondary {
-    width: 100%;
-    justify-content: center;
+.portfolio-details .portfolio-details-content .cta-buttons .btn-next-project:hover i {
+  transform: translateX(3px);
+}
+
+@media (max-width: 1199.98px) {
+  .portfolio-details .portfolio-details-content {
+    padding-left: 1rem;
   }
 }
 
-.portfolio .cta-section .btn-cta-secondary:hover {
-  background: color-mix(in srgb, var(--contrast-color) 15%, transparent);
-  border-color: var(--contrast-color);
+@media (max-width: 991.98px) {
+  .portfolio-details .portfolio-details-content {
+    padding: 2rem 0 0 0;
+  }
+
+  .portfolio-details .portfolio-details-content .cta-buttons {
+    margin-top: 2rem;
+  }
 }
 
-.portfolio .cta-section .btn-cta-secondary i {
-  font-size: 20px;
+@media (max-width: 767.98px) {
+  .portfolio-details .project-meta {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .portfolio-details .project-meta .date-client {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .portfolio-details .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .portfolio-details .cta-buttons a {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-.portfolio .cta-section .cta-decoration {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.portfolio .cta-section .cta-decoration .floating-shape {
-  position: absolute;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--contrast-color) 10%, transparent);
-}
-
-.portfolio .cta-section .cta-decoration .floating-shape.shape-1 {
-  width: 300px;
-  height: 300px;
-  top: -100px;
-  right: -50px;
-}
-
-.portfolio .cta-section .cta-decoration .floating-shape.shape-2 {
-  width: 200px;
-  height: 200px;
-  bottom: -80px;
-  left: -60px;
-}
-
-.portfolio .cta-section .cta-decoration .floating-shape.shape-3 {
-  width: 120px;
-  height: 120px;
-  top: 50%;
-  left: 20%;
-  transform: translateY(-50%);
-}
 
 /*--------------------------------------------------------------
 # Why Us Section
@@ -6001,6 +6075,15 @@ section,
 .service-details .cta-widget .cta-btn:hover i {
   transform: translateX(4px);
 }
+
+
+
+
+
+
+
+
+
 
 /*--------------------------------------------------------------
 # Terms Of Service Section
