@@ -259,7 +259,7 @@ h6 {
 .header.scrolled {
   background-color: #ffffff !important;
   box-shadow: 0 2px 20px rgba(0,0,0,0.08);
-  padding: 10px 0; /* xxx */
+  padding: 10px 0;
 }
 /* Menu no topo (branco) */
 .header:not(.scrolled) .navmenu > ul > li > a {
@@ -3730,12 +3730,43 @@ section,
 .team .section-title,
 .team .section-title h2,
 .team .section-title h3,
-.team .section-title p {
+.team .section-title p,
+.team p,
+.team .team-item h4 {
   color: #fff !important;
 }
 
+.team .team-item p {
+  opacity: .7;
+}
 
+.team .team-item {
+  transition: all 0.4s ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
 
+.team .team-item .team-icon {
+  min-width: 60px;
+  height: 60px;
+  margin-right: 10px;
+  background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s ease-in-out;
+  flex-shrink: 0;
+}
+
+.team .team-item .team-icon i {
+  font-size: 22px;
+  color: var(--contrast-color);
+}
 
 .team .team-card {
   background: var(--surface-color);
