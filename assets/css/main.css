@@ -638,16 +638,25 @@ h6 {
 .footer {
   color: var(--default-color);
   color: #fff;
- /* background-color: var(--background-color); */
-  background: var(--gradient-clinica);
+ /* background-color: var(--background-color); 
+  background: var(--gradient-clinica); */
+  background: var(--cinza-color);
   font-size: 14px;
   padding: 60px 0 30px;
   position: relative;
 }
 
+.footer p {
+  font-size: 1rem !important;
+}
+
 .footer .footer-top {
   padding-bottom: 40px;
   border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer i {
+  margin-right: 5px;
 }
 
 .footer .footer-info .logo {
@@ -678,11 +687,11 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   border-radius: 8px;
   background-color: color-mix(in srgb, var(--default-color), transparent 95%);
-  font-size: 16px;
+  font-size: 22px;
   color: var(--default-color);
   color:#fff;
   transition: all 0.3s ease;
@@ -2394,11 +2403,10 @@ section,
 }
 
 .equipamentos .equipamentos-item img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border:2px solid var(--accent-color);
-  padding: 10px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
