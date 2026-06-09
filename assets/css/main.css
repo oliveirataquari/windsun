@@ -12,11 +12,9 @@
 /* Fonts */
 :root {
   /* --default-font: "Inter", sans-serif; */
-
   --default-font: "Barlow Semi Condensed", sans-serif;
   --heading-font: "Barlow Semi Condensed", sans-serif;
   --nav-font: "Barlow Semi Condensed", sans-serif;;
-
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -653,7 +651,7 @@ h6 {
 }
 
 .footer a {
-  color: #b8b8b8;
+  color: #fff;
 }
 .footer a:hover {
   color: #fff;
