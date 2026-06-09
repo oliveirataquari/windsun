@@ -644,12 +644,13 @@ h6 {
   background: url(../img/bg-footer1.jpg) no-repeat center right;
   background-size: cover;
   font-size: 14px;
-  padding: 60px 0 30px;
+  padding: 80px 0 30px;
   position: relative;
 }
 
 .footer p {
   font-size: 1rem !important;
+  padding-bottom: 8px;
 }
 
 .footer a {
@@ -668,6 +669,11 @@ h6 {
 .footer i {
   margin-right: 5px;
 }
+
+.footer .tioliveira {
+  margin-right: 0px !important;
+}
+
 
 .footer .footer-info .logo {
   line-height: 1;
