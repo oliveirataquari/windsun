@@ -641,6 +641,8 @@ h6 {
  /* background-color: var(--background-color); 
   background: var(--gradient-clinica); */
   background: var(--cinza-color);
+  background: url(../img/bg-footer1.jpg) no-repeat center right;
+  background-size: cover;
   font-size: 14px;
   padding: 60px 0 30px;
   position: relative;
@@ -649,6 +651,14 @@ h6 {
 .footer p {
   font-size: 1rem !important;
 }
+
+.footer a {
+  color: #b8b8b8;
+}
+.footer a:hover {
+  color: #fff;
+}
+
 
 .footer .footer-top {
   padding-bottom: 40px;
@@ -6671,4 +6681,12 @@ section,
   border-radius: 5px !important;
   font-size: 17px;
   text-transform: uppercase; 
-} 
+}
+
+.tioliveira {
+  color:yellow !important;
+  border:2px yellow solid;
+  border-radius: 50%;
+  padding: 2px 3px;
+  margin-left: 10px;
+}
