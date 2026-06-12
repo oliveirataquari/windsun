@@ -1168,7 +1168,7 @@ section,
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 70vh;
+    min-height: 60vh;
     /* display: block; */
   }
 }
