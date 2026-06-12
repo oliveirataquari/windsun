@@ -4466,7 +4466,14 @@ section,
   }
 }
 
+/* Mobile padrão */
 @media (max-width: 768px) {
+
+  .contact .info-panel .social-connect {
+    flex-direction:row !important;
+    align-items: center !important;
+  }
+
   .contact .info-panel {
     padding: 32px;
   }
