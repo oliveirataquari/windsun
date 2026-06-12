@@ -4470,14 +4470,20 @@ section,
   }
 }
 
+
+
+
 @media (max-width: 768px) {
   .contact .info-panel {
     padding: 10px;
   }
 
-
   .info-panel {
     padding: 5px;
+  }
+
+  .method-item {
+    margin-bottom: 0px !important;
   }
 
   .contact .info-panel .panel-header {
@@ -4490,8 +4496,13 @@ section,
   }
 
   .contact .info-panel .contact-methods {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
+
+.contact .info-panel .contact-methods {
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
   .contact .info-panel .stats-strip {
     flex-direction: column;
