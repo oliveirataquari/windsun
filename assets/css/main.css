@@ -4466,8 +4466,23 @@ section,
   }
 }
 
+
 /* Mobile padrão */
 @media (max-width: 768px) {
+
+  .contact .info-panel .method-item {
+    padding: 5px !important;
+  }
+
+  .contact .info-panel .method-item .method-icon {
+    width: 32px;
+    height: 32px;
+    display: none !important;
+  }
+
+  .contact .info-panel .method-item .method-icon i {
+    font-size: 16px;
+  }
 
   .contact .info-panel .social-connect {
     flex-direction:row !important;
