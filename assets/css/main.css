@@ -4471,12 +4471,6 @@ section,
 }
 
 
-<<<<<<< HEAD
-
-
-=======
-/* Mobile padrão */
->>>>>>> 83ef521201772569187f21a10eb6646050bcf280
 @media (max-width: 768px) {
 
   .contact .info-panel .method-item {
@@ -4511,11 +4505,7 @@ section,
   }
 
   .contact .info-panel .panel-header {
-<<<<<<< HEAD
     margin-bottom: 10px;
-=======
-    margin-bottom: 1px;
->>>>>>> 83ef521201772569187f21a10eb6646050bcf280
   }
 
   .contact .info-panel .panel-header h3 {
